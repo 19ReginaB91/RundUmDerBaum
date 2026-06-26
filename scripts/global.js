@@ -1,8 +1,12 @@
+// scripts/global.js
+
 document.documentElement.classList.add("js");
 
 const siteHeader = document.querySelector(".site-header");
 const mainNav = document.querySelector("#main-nav");
 const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenuToggle = document.querySelector(".mobile-menu-trigger");
+const revealItems = document.querySelectorAll(".reveal");
 const legalModal = document.querySelector("#legal-modal");
 const cookieBanner = document.querySelector("#cookie-banner");
 const cookieButton = document.querySelector("#cookie-ok");
@@ -114,36 +118,116 @@ const legalTexts = {
   `
 };
 
-function handleHeaderScroll() {
+function initHeaderTheme() {
   if (!siteHeader) return;
 
-  siteHeader.classList.toggle("scrolled", window.scrollY > 30);
+  let animationFrame = null;
+
+  function getActiveHeaderTheme() {
+    const headerBox = siteHeader.getBoundingClientRect();
+    const probeY = Math.min(window.innerHeight - 1, Math.round(headerBox.bottom + 2));
+
+    const probePoints = [
+      Math.round(window.innerWidth * 0.18),
+      Math.round(window.innerWidth * 0.5),
+      Math.round(window.innerWidth * 0.82)
+    ];
+
+    const themes = probePoints.map((probeX) => {
+      const elements = document.elementsFromPoint(probeX, probeY);
+
+      const themedElement = elements.find((element) => {
+        return element.closest?.("[data-header-theme]");
+      });
+
+      return themedElement?.closest("[data-header-theme]")?.dataset.headerTheme;
+    });
+
+    const darkVotes = themes.filter((theme) => theme === "dark").length;
+    const lightVotes = themes.filter((theme) => theme === "light").length;
+
+    return darkVotes > lightVotes ? "dark" : "light";
+  }
+
+  function updateHeaderTheme() {
+    const theme = getActiveHeaderTheme();
+
+    siteHeader.classList.toggle("is-on-dark", theme === "dark");
+    siteHeader.classList.toggle("is-on-light", theme !== "dark");
+  }
+
+  function requestHeaderThemeUpdate() {
+    if (animationFrame) return;
+
+    animationFrame = requestAnimationFrame(() => {
+      animationFrame = null;
+      updateHeaderTheme();
+    });
+  }
+
+  updateHeaderTheme();
+
+  window.addEventListener("scroll", requestHeaderThemeUpdate, {
+    passive: true
+  });
+
+  window.addEventListener("resize", requestHeaderThemeUpdate);
 }
 
-function initHeader() {
-  if (!siteHeader) return;
+function setMenuState(isOpen) {
+  if (!mainNav) return;
 
-  handleHeaderScroll();
+  mainNav.classList.toggle("open", isOpen);
 
-  window.addEventListener("scroll", handleHeaderScroll, {
-    passive: true
+  [menuToggle, mobileMenuToggle].filter(Boolean).forEach((button) => {
+    button.setAttribute("aria-expanded", String(isOpen));
   });
 }
 
 function initMobileMenu() {
-  if (!mainNav || !menuToggle) return;
+  if (!mainNav) return;
 
-  menuToggle.addEventListener("click", () => {
-    const isOpen = mainNav.classList.toggle("open");
-
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  [menuToggle, mobileMenuToggle].filter(Boolean).forEach((button) => {
+    button.addEventListener("click", () => {
+      const isOpen = mainNav.classList.contains("open");
+      setMenuState(!isOpen);
+    });
   });
 
   mainNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      mainNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
+      setMenuState(false);
     });
+  });
+}
+
+function initScrollReveal() {
+  if (!revealItems.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach((element) => {
+      element.classList.add("visible");
+    });
+
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.13
+    }
+  );
+
+  revealItems.forEach((element) => {
+    revealObserver.observe(element);
   });
 }
 
@@ -194,47 +278,15 @@ function initCookieBanner() {
   });
 }
 
-function initContactForms() {
-  const forms = document.querySelectorAll("[data-contact-form], #contact-form");
-
-  forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const data = new FormData(form);
-      const status = form.querySelector(".form-status");
-
-      const name = data.get("name") || "";
-      const phone = data.get("phone") || "-";
-      const email = data.get("email") || "-";
-      const service = data.get("service") || "Website-Anfrage";
-      const message = data.get("message") || "";
-
-      const subject = encodeURIComponent(`Website-Anfrage: ${service}`);
-      const body = encodeURIComponent(
-        `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\n${message}`
-      );
-
-      if (status) {
-        status.textContent =
-          "Ihr E-Mail-Programm wird geöffnet. Ein echter Formularversand kann beim Hosting ergänzt werden.";
-      }
-
-      window.location.href =
-        `mailto:uli.p.pfaff@t-online.de?subject=${subject}&body=${body}`;
-    });
-  });
-}
-
 function initCurrentYear() {
   if (!yearElement) return;
 
   yearElement.textContent = new Date().getFullYear();
 }
 
-initHeader();
+initHeaderTheme();
 initMobileMenu();
+initScrollReveal();
 initLegalModal();
 initCookieBanner();
-initContactForms();
 initCurrentYear();

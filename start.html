@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Rund um den Baum - Fachbetrieb für Baumpflege, Baumfällung und Gartengestaltung in Hünxe und Umgebung.">
+
   <title>Rund um den Baum | Fa. Pfaff</title>
 
   <link rel="icon" href="assets/favicon/pfaff-icon.ico?v=20260626" sizes="any">
@@ -15,9 +16,8 @@
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/start.css">
-
-  
 </head>
+
 <body>
   <div class="page-noise" aria-hidden="true"></div>
 
@@ -33,17 +33,18 @@
       </span>
     </a>
 
-    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
       <span></span>
       <span></span>
     </button>
 
-    <nav id="main-nav">
-  <a href="start.html">Start</a>
+    <nav id="main-nav" aria-label="Hauptnavigation">
+      <a href="start.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
       <a href="projects.html">Projekte</a>
       <a href="contact.html">Kontakt</a>
+      <a class="nav-mobile-contact" href="mailto:uli.p.pfaff@t-online.de">E-Mail schreiben</a>
     </nav>
 
     <a class="header-call" href="tel:+4917631176940">
@@ -53,7 +54,7 @@
   </header>
 
   <main>
-    <section class="hero" id="start">
+    <section class="hero" id="start" data-header-theme="dark">
       <div class="hero-image" aria-hidden="true"></div>
       <div class="sun-wash" aria-hidden="true"></div>
       <div class="leaf-field" aria-hidden="true"></div>
@@ -94,7 +95,7 @@
       </a>
     </section>
 
-    <section class="intro section-light" id="intro">
+    <section class="intro section-light" id="intro" data-header-theme="light">
       <div class="section-index reveal">01 / Haltung</div>
 
       <div class="intro-copy">
@@ -120,7 +121,7 @@
       </div>
     </section>
 
-    <section class="services section-dark" id="leistungen">
+    <section class="services section-dark" id="leistungen" data-header-theme="dark">
       <div class="section-heading">
         <div>
           <p class="eyebrow reveal">Unsere Leistungen</p>
@@ -225,7 +226,7 @@
       </div>
     </section>
 
-    <section class="manifesto" id="haltung">
+    <section class="manifesto" id="haltung" data-header-theme="light">
       <div
         class="manifesto-image"
         role="img"
@@ -254,7 +255,7 @@
       </div>
     </section>
 
-    <section class="process section-light" id="ablauf">
+    <section class="process section-light" id="ablauf" data-header-theme="light">
       <div class="section-heading">
         <div>
           <p class="eyebrow reveal">So arbeiten wir</p>
@@ -298,7 +299,7 @@
       </div>
     </section>
 
-    <section class="contact" id="kontakt">
+    <section class="contact" id="kontakt" data-header-theme="dark">
       <div class="contact-copy">
         <p class="eyebrow reveal">Ihr Baum. Unser Handwerk.</p>
 
@@ -365,6 +366,7 @@
 
         <label class="consent full">
           <input type="checkbox" required>
+
           <span>
             Ich habe die
             <button type="button" data-modal="datenschutz">Datenschutzerklärung</button>
@@ -390,18 +392,18 @@
       Schreiben
     </a>
 
+    <button class="mobile-menu-trigger" type="button" aria-expanded="false" aria-controls="main-nav">
+      <span>Menü</span>
+      Öffnen
+    </button>
+
     <a href="tel:+4917631176940" aria-label="Jetzt anrufen">
       <span>Telefon</span>
       Anrufen
     </a>
-
-    <a href="mailto:uli.p.pfaff@t-online.de" aria-label="E-Mail schreiben">
-      <span>E-Mail</span>
-      Mail senden
-    </a>
   </div>
 
-  <footer>
+  <footer data-header-theme="dark">
     <div class="footer-brand">
       <img src="assets/media/logo-original.jpeg" alt="Rund um den Baum, Fa. Pfaff">
 
@@ -426,6 +428,7 @@
     <div>
       <h3>Navigation</h3>
 
+      <a href="start.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
       <a href="projects.html">Projekte</a>
@@ -435,9 +438,9 @@
     <div>
       <h3>Rechtliches</h3>
 
-      <button data-modal="impressum">Impressum</button>
-      <button data-modal="datenschutz">Datenschutz</button>
-      <button data-modal="cookies">Cookie-Hinweise</button>
+      <button type="button" data-modal="impressum">Impressum</button>
+      <button type="button" data-modal="datenschutz">Datenschutz</button>
+      <button type="button" data-modal="cookies">Cookie-Hinweise</button>
     </div>
 
     <div class="footer-bottom">
@@ -457,25 +460,22 @@
     </div>
 
     <div>
-      <button class="button button-ghost" data-modal="cookies">
+      <button class="button button-ghost" type="button" data-modal="cookies">
         Mehr erfahren
       </button>
 
-      <button class="button button-primary" id="cookie-ok">
+      <button class="button button-primary" type="button" id="cookie-ok">
         Verstanden
       </button>
     </div>
   </div>
 
   <dialog id="legal-modal">
-    <button class="modal-close" aria-label="Schließen">×</button>
+    <button class="modal-close" type="button" aria-label="Schließen">×</button>
     <div class="modal-content"></div>
   </dialog>
 
-
-
-  <script src="scripts/global.js"></script>
-<script src="scripts/start.js"></script>
-</body>
+  <script src="scripts/global.js" defer></script>
+  <script src="scripts/start.js" defer></script>
 </body>
 </html>
