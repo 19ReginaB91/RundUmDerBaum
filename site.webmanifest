@@ -1,0 +1,19 @@
+{
+  "name": "Rund um den Baum | Fa. Pfaff",
+  "short_name": "Rund um den Baum",
+  "icons": [
+    {
+      "src": "assets/favicon/pfaff-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon/pfaff-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#142516",
+  "background_color": "#faf8f2",
+  "display": "standalone"
+}
