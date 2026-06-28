@@ -6,6 +6,8 @@ const siteHeader = document.querySelector(".site-header");
 const mainNav = document.querySelector("#main-nav");
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenuToggle = document.querySelector(".mobile-menu-trigger");
+const mobileContactToggle = document.querySelector(".mobile-contact-trigger");
+const mobileContactActions = document.querySelector("#mobile-contact-actions");
 const revealItems = document.querySelectorAll(".reveal");
 const legalModal = document.querySelector("#legal-modal");
 const cookieBanner = document.querySelector("#cookie-banner");
@@ -34,8 +36,8 @@ const legalTexts = {
     <h3>Hinweis zum Entwurf</h3>
     <p>
       Vor Veröffentlichung müssen Rechtsform, zuständige Aufsichtsbehörde,
-      Kammer-/Registerdaten und gegebenenfalls Umsatzsteuer-ID durch den
-      Betreiber geprüft und ergänzt werden.
+      Kammer-/Registerdaten und gegebenenfalls Steuerdaten durch den Betreiber
+      geprüft und ergänzt werden.
     </p>
 
     <h3>Haftung für Inhalte und Links</h3>
@@ -201,6 +203,40 @@ function initMobileMenu() {
   });
 }
 
+function setMobileContactState(isOpen) {
+  if (!mobileContactToggle || !mobileContactActions) return;
+
+  mobileContactToggle.setAttribute("aria-expanded", String(isOpen));
+  mobileContactActions.hidden = !isOpen;
+}
+
+function initMobileContactActions() {
+  if (!mobileContactToggle || !mobileContactActions) return;
+
+  mobileContactToggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+
+    const isOpen = mobileContactToggle.getAttribute("aria-expanded") === "true";
+    setMobileContactState(!isOpen);
+  });
+
+  mobileContactActions.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      setMobileContactState(false);
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".mobile-bottom-nav")) return;
+
+    setMobileContactState(false);
+  });
+
+  window.addEventListener("resize", () => {
+    setMobileContactState(false);
+  });
+}
+
 function initScrollReveal() {
   if (!revealItems.length) return;
 
@@ -286,6 +322,7 @@ function initCurrentYear() {
 
 initHeaderTheme();
 initMobileMenu();
+initMobileContactActions();
 initScrollReveal();
 initLegalModal();
 initCookieBanner();

@@ -23,13 +23,13 @@
 
   <header class="site-header">
     <a class="brand" href="start.html" aria-label="Rund um den Baum - Startseite">
-      <span class="brand-mark">
-        <img src="assets/media/logo-original.jpeg" alt="">
+      <span class="brand-tree">
+        <img src="assets/media/logo-tree.png" alt="">
       </span>
 
-      <span class="brand-copy">
-        <strong>Rund um den Baum</strong>
-        <small>Fa. Pfaff · Hünxe</small>
+      <span class="brand-wordmark-wrap">
+        <img class="brand-wordmark" src="assets/media/logo-wordmark.png" alt="Rund um den Baum · Fa. Pfaff">
+        <span class="brand-meta">Hünxe · seit 1998</span>
       </span>
     </a>
 
@@ -42,15 +42,22 @@
       <a href="start.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
-      <a href="projects.html">Projekte</a>
+      <a href="projects.html">Arbeiten</a>
       <a href="contact.html">Kontakt</a>
       <a class="nav-mobile-contact" href="mailto:uli.p.pfaff@t-online.de">E-Mail schreiben</a>
     </nav>
 
-    <a class="header-call" href="tel:+4917631176940">
-      <span>Direkt anrufen</span>
-      0176 311 76 940
-    </a>
+    <div class="header-contact" aria-label="Telefonnummern">
+      <a href="tel:+492858836993">
+        <span>Festnetz</span>
+        02858 836993
+      </a>
+
+      <a href="tel:+4917631176940">
+        <span>Mobil</span>
+        0176 311 76 940
+      </a>
+    </div>
   </header>
 
   <main>
@@ -86,7 +93,7 @@
       <div class="hero-trust reveal">
         <span><b>SKT</b> Seilklettertechnik</span>
         <span><b>ZTV</b> Fachgerechte Pflege</span>
-        <span><b>Vor Ort</b> Hünxe & Umgebung</span>
+        <span><b>Seit 1998</b> zertifizierter Fachbetrieb</span>
       </div>
 
       <a class="scroll-cue" href="start.html#intro">
@@ -314,6 +321,11 @@
         </p>
 
         <div class="contact-direct reveal">
+          <a href="tel:+492858836993">
+            <small>Festnetz</small>
+            02858 836993
+          </a>
+
           <a href="tel:+4917631176940">
             <small>Mobil</small>
             0176 311 76 940
@@ -383,29 +395,73 @@
     </section>
   </main>
 
-  <div class="mobile-contact-bar" aria-label="Schnellkontakt">
-    <a
-      href="https://wa.me/4917631176940?text=Hallo%20Rund%20um%20den%20Baum%2C%20ich%20habe%20eine%20Anfrage."
-      aria-label="Per WhatsApp schreiben"
-    >
-      <span>WhatsApp</span>
-      Schreiben
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a class="mobile-bottom-link" href="services.html">
+      <img src="assets/icons/trimming.png" alt="" aria-hidden="true">
+      <span>Leistungen</span>
     </a>
 
-    <button class="mobile-menu-trigger" type="button" aria-expanded="false" aria-controls="main-nav">
-      <span>Menü</span>
-      Öffnen
+    <a class="mobile-bottom-link" href="about.html">
+      <img src="assets/icons/about.png" alt="" aria-hidden="true">
+      <span>Über uns</span>
+    </a>
+
+    <a class="mobile-bottom-link" href="projects.html">
+      <img src="assets/icons/galerie.png" alt="" aria-hidden="true">
+      <span>Arbeiten</span>
+    </a>
+
+    <button
+      class="mobile-bottom-link mobile-contact-trigger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-contact-actions"
+    >
+      <img src="assets/icons/telephone.png" alt="" aria-hidden="true">
+      <span>Kontakt</span>
     </button>
 
-    <a href="tel:+4917631176940" aria-label="Jetzt anrufen">
-      <span>Telefon</span>
-      Anrufen
-    </a>
-  </div>
+    <div class="mobile-contact-actions" id="mobile-contact-actions" hidden>
+      <a href="tel:+492858836993">
+        <img src="assets/icons/telephone.png" alt="" aria-hidden="true">
+        <span>
+          <b>Festnetz</b>
+          <small>02858 836993</small>
+        </span>
+      </a>
+
+      <a href="tel:+4917631176940">
+        <img src="assets/icons/mobile.png" alt="" aria-hidden="true">
+        <span>
+          <b>Mobil</b>
+          <small>0176 311 76 940</small>
+        </span>
+      </a>
+
+      <a href="https://wa.me/4917631176940?text=Hallo%20Rund%20um%20den%20Baum%2C%20ich%20habe%20eine%20Anfrage.">
+        <img src="assets/icons/whatsapp.png" alt="" aria-hidden="true">
+        <span>
+          <b>WhatsApp</b>
+          <small>Nachricht senden</small>
+        </span>
+      </a>
+
+      <a href="contact.html">
+        <img src="assets/icons/mail.png" alt="" aria-hidden="true">
+        <span>
+          <b>Schreiben</b>
+          <small>Zum Kontaktformular</small>
+        </span>
+      </a>
+    </div>
+  </nav>
 
   <footer data-header-theme="dark">
     <div class="footer-brand">
-      <img src="assets/media/logo-original.jpeg" alt="Rund um den Baum, Fa. Pfaff">
+      <div class="footer-logo-lockup">
+        <img class="footer-logo-tree" src="assets/media/logo-tree.png" alt="">
+        <img class="footer-logo-wordmark" src="assets/media/logo-wordmark.png" alt="Rund um den Baum, Fa. Pfaff">
+      </div>
 
       <p>
         Baumpflege in Seilklettertechnik<br>
@@ -423,6 +479,7 @@
 
       <a href="tel:+492858836993">02858 836993</a>
       <a href="tel:+4917631176940">0176 311 76 940</a>
+      <a href="mailto:uli.p.pfaff@t-online.de">uli.p.pfaff@t-online.de</a>
     </div>
 
     <div>
@@ -431,7 +488,7 @@
       <a href="start.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
-      <a href="projects.html">Projekte</a>
+      <a href="projects.html">Arbeiten</a>
       <a href="contact.html">Kontakt</a>
     </div>
 
