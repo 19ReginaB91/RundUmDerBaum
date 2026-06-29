@@ -528,6 +528,15 @@ dialog::backdrop {
 .reveal:nth-child(4) {
   transition-delay: .24s;
 }
+.footer-forest-edge {
+  height: clamp(120px, 16vw, 230px);
+  margin-top: clamp(-90px, -6vw, -50px);
+  margin-bottom: -1px;
+  background: url("../assets/media/footer-forest-edge.png") center bottom / cover no-repeat;
+  pointer-events: none;
+  position: relative;
+  z-index: 2;
+}
 
 @media (max-width: 1130px) {
   .site-header {

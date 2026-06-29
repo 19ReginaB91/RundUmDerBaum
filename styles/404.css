@@ -1,0 +1,416 @@
+.page-404 {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--color-forest);
+}
+
+.page-404 main {
+  min-height: 100vh;
+}
+
+.not-found {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 92px var(--container-x);
+  overflow: hidden;
+  color: var(--color-paper);
+  isolation: isolate;
+}
+
+.not-found__forest {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  background:
+    linear-gradient(90deg, rgba(10, 18, 11, .86), rgba(10, 18, 11, .54), rgba(10, 18, 11, .32)),
+    radial-gradient(circle at 76% 24%, rgba(198, 106, 43, .16), transparent 28%),
+    radial-gradient(circle at 18% 80%, rgba(173, 193, 139, .14), transparent 34%),
+    url("../assets/media/404-pic.png") center / cover no-repeat;
+  transform: scale(1.04);
+  will-change: transform;
+}
+
+.not-found__forest::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 45%, transparent 0 28%, rgba(10, 18, 11, .24) 58%, rgba(10, 18, 11, .62) 100%),
+    linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .045) 1px, transparent 1px);
+  background-size: auto, 82px 82px, 82px 82px;
+  opacity: .9;
+  mix-blend-mode: soft-light;
+}
+
+.not-found-back {
+  position: absolute;
+  z-index: 5;
+  top: 28px;
+  left: var(--container-x);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  color: var(--color-paper);
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: rgba(10, 18, 11, .34);
+  border: 1px solid rgba(255, 255, 255, .14);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .18);
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.not-found-back:hover {
+  transform: translateY(-2px);
+  background: rgba(198, 106, 43, .92);
+  color: #fff;
+}
+
+.not-found__content {
+  position: relative;
+  z-index: 4;
+  max-width: 830px;
+  text-align: center;
+}
+
+.not-found__number {
+  display: block;
+  margin: 10px 0 12px;
+  font-family: var(--font-serif);
+  font-size: clamp(7rem, 22vw, 18rem);
+  line-height: .76;
+  letter-spacing: -.08em;
+  color: var(--color-paper);
+  text-shadow:
+    0 26px 90px rgba(0, 0, 0, .42),
+    0 0 80px rgba(198, 106, 43, .22);
+}
+
+.not-found h1 {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+.not-found p {
+  max-width: 560px;
+  margin: 24px auto 0;
+  color: rgba(255, 255, 255, .8);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.not-found__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+/* Decorative “line + broken branch” */
+.not-found__branch {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 22%;
+  width: min(760px, 76vw);
+  height: 170px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: .78;
+  will-change: transform;
+}
+
+.not-found__line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 88px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(242, 238, 228, .18),
+    rgba(242, 238, 228, .58),
+    rgba(242, 238, 228, .18),
+    transparent
+  );
+  box-shadow: 0 0 24px rgba(242, 238, 228, .1);
+}
+
+.not-found__broken-branch {
+  position: absolute;
+  left: 51%;
+  top: 38px;
+  width: 230px;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, #4b2b17, #7a4824 48%, #3a2112);
+  box-shadow:
+    inset 0 3px 7px rgba(255, 255, 255, .18),
+    inset 0 -4px 8px rgba(0, 0, 0, .28),
+    0 18px 40px rgba(0, 0, 0, .32);
+  transform: rotate(-18deg);
+  transform-origin: 18% 50%;
+  animation: branchSwing 5.8s ease-in-out infinite;
+}
+
+.not-found__broken-branch::before,
+.not-found__broken-branch::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, #3b2111, #70411f);
+}
+
+.not-found__broken-branch::before {
+  width: 86px;
+  height: 12px;
+  left: 44px;
+  top: -27px;
+  transform: rotate(-42deg);
+}
+
+.not-found__broken-branch::after {
+  width: 78px;
+  height: 11px;
+  right: 34px;
+  bottom: -25px;
+  transform: rotate(42deg);
+}
+
+/* Falling leaves */
+.not-found__leaves {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.not-found__leaves span {
+  position: absolute;
+  top: -8%;
+  width: 18px;
+  height: 11px;
+  border-radius: 100% 0 100% 0;
+  background:
+    linear-gradient(135deg, rgba(173, 193, 139, .95), rgba(96, 115, 75, .95));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
+  opacity: .68;
+  animation-name: leafFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.not-found__leaves span:nth-child(1) {
+  left: 17%;
+  animation-duration: 12s;
+  animation-delay: -2s;
+}
+
+.not-found__leaves span:nth-child(2) {
+  left: 32%;
+  width: 15px;
+  height: 9px;
+  animation-duration: 15s;
+  animation-delay: -7s;
+}
+
+.not-found__leaves span:nth-child(3) {
+  left: 61%;
+  width: 21px;
+  height: 12px;
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+
+.not-found__leaves span:nth-child(4) {
+  left: 76%;
+  width: 14px;
+  height: 9px;
+  animation-duration: 17s;
+  animation-delay: -9s;
+}
+
+.not-found__leaves span:nth-child(5) {
+  left: 88%;
+  width: 19px;
+  height: 11px;
+  animation-duration: 14s;
+  animation-delay: -5s;
+}
+
+.not-found__click-leaf {
+  position: fixed;
+  z-index: 6;
+  width: 18px;
+  height: 11px;
+  border-radius: 100% 0 100% 0;
+  background:
+    linear-gradient(135deg, rgba(173, 193, 139, .96), rgba(96, 115, 75, .96));
+  pointer-events: none;
+  transform: translate3d(0, 0, 0) rotate(0deg);
+  animation: clickLeaf 1.8s ease-out forwards;
+}
+
+@keyframes leafFall {
+  0% {
+    transform: translate3d(0, -20px, 0) rotate(0deg);
+  }
+
+  35% {
+    transform: translate3d(34px, 35vh, 0) rotate(130deg);
+  }
+
+  70% {
+    transform: translate3d(-26px, 72vh, 0) rotate(250deg);
+  }
+
+  100% {
+    transform: translate3d(18px, 108vh, 0) rotate(360deg);
+  }
+}
+
+@keyframes branchSwing {
+  0%,
+  100% {
+    transform: rotate(-18deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(-15deg) translateY(5px);
+  }
+}
+
+@keyframes clickLeaf {
+  0% {
+    opacity: .9;
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--leaf-x), 90px, 0) rotate(var(--leaf-rotate));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found__leaves span,
+  .not-found__broken-branch,
+  .not-found__click-leaf {
+    animation: none;
+  }
+}
+
+@media (max-width: 1130px) {
+  .not-found {
+    padding-inline: 6vw;
+  }
+
+  .not-found-back {
+    left: 6vw;
+  }
+
+  .not-found__branch {
+    top: 24%;
+    width: 82vw;
+  }
+
+  .not-found__broken-branch {
+    width: 190px;
+  }
+}
+
+@media (max-width: 760px) {
+  .page-404 {
+    overflow: auto;
+  }
+
+  .not-found {
+    min-height: 100vh;
+    padding: 118px 22px 70px;
+    place-items: center start;
+  }
+
+  .not-found__forest {
+    background:
+      linear-gradient(rgba(10, 18, 11, .62), rgba(10, 18, 11, .78)),
+      radial-gradient(circle at 70% 18%, rgba(198, 106, 43, .18), transparent 30%),
+      url("../assets/media/404-pic.png") center / cover no-repeat;
+  }
+
+  .not-found-back {
+    top: 18px;
+    left: 22px;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: .72rem;
+  }
+
+  .not-found__content {
+    text-align: left;
+    max-width: 560px;
+  }
+
+  .not-found p {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .not-found__actions {
+    display: grid;
+    justify-content: stretch;
+  }
+
+  .not-found__branch {
+    left: 58%;
+    top: 18%;
+    width: 94vw;
+    opacity: .42;
+  }
+
+  .not-found__line {
+    top: 82px;
+  }
+
+  .not-found__broken-branch {
+    left: 46%;
+    width: 150px;
+    height: 15px;
+  }
+}
+
+@media (max-width: 520px) {
+  .not-found__number {
+    font-size: clamp(6rem, 34vw, 10rem);
+  }
+
+  .not-found h1 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .not-found__branch {
+    display: none;
+  }
+
+  .not-found__leaves span {
+    opacity: .42;
+  }
+}
