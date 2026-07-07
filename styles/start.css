@@ -10,37 +10,63 @@
   color: #fff;
 }
 
-.hero-image {
+.hero-video {
   position: absolute;
-  inset: -4%;
-  background-image:
-    linear-gradient(90deg, rgba(8, 17, 10, .88) 0%, rgba(8, 17, 10, .55) 43%, rgba(8, 17, 10, .08) 75%),
-    url("../assets/media/hero-arborist.png");
-  background-size: cover;
-  background-position: center;
-  animation: breathe 16s ease-in-out infinite alternate;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transform: scale(1.02);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(8, 17, 10, .86) 0%, rgba(8, 17, 10, .58) 42%, rgba(8, 17, 10, .22) 76%),
+    linear-gradient(180deg, rgba(8, 17, 10, .12) 0%, rgba(8, 17, 10, .2) 48%, rgba(8, 17, 10, .78) 100%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 68% 38%, rgba(255, 214, 132, .22), transparent 28%),
+    radial-gradient(circle at 18% 65%, rgba(12, 32, 16, .46), transparent 34%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .sun-wash {
   position: absolute;
+  z-index: 1;
   top: -20vw;
   right: 8vw;
   width: 50vw;
   height: 50vw;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 239, 180, .32), rgba(255, 225, 140, .07) 35%, transparent 69%);
+  background: radial-gradient(circle, rgba(255, 239, 180, .26), rgba(255, 225, 140, .06) 35%, transparent 69%);
   mix-blend-mode: screen;
   filter: blur(20px);
   animation: sun 9s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .leaf-field {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 85% 13%, rgba(170, 205, 112, .16), transparent 30%),
-    radial-gradient(ellipse at 67% 72%, rgba(4, 25, 8, .18), transparent 27%);
+    radial-gradient(ellipse at 85% 13%, rgba(170, 205, 112, .12), transparent 30%),
+    radial-gradient(ellipse at 67% 72%, rgba(4, 25, 8, .2), transparent 27%);
   animation: leaves 6s ease-in-out infinite alternate;
 }
 
@@ -546,16 +572,6 @@ blockquote em {
   font-size: 12px;
 }
 
-@keyframes breathe {
-  0% {
-    transform: scale(1.02) translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: scale(1.09) translate3d(-1.2%, .8%, 0);
-  }
-}
-
 @keyframes sun {
   0%,
   100% {
@@ -639,11 +655,14 @@ blockquote em {
     padding: 110px 22px 90px;
   }
 
-  .hero-image {
-    background-image:
-      linear-gradient(90deg, rgba(8, 17, 10, .88), rgba(8, 17, 10, .43)),
-      url("../assets/media/hero-arborist.png");
-    background-position: 62% center;
+  .hero-video {
+    object-position: center;
+  }
+
+  .hero::before {
+    background:
+      linear-gradient(90deg, rgba(8, 17, 10, .9), rgba(8, 17, 10, .54)),
+      linear-gradient(180deg, rgba(8, 17, 10, .18), rgba(8, 17, 10, .82));
   }
 
   .hero h1 {
@@ -735,7 +754,7 @@ blockquote em {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-image,
+  .hero-video,
   .sun-wash,
   .leaf-field,
   .service-ticker div,

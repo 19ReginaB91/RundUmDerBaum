@@ -2,61 +2,41 @@
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>404 | Seite nicht gefunden | Rund um den Baum · Fa. Pfaff</title>
-  <meta name="description" content="Die gesuchte Seite wurde nicht gefunden. Zurück zur Startseite von Rund um den Baum · Fa. Pfaff.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="404 - Seite nicht gefunden. Rund um den Baum · Fa. Pfaff.">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/favicon-180x180.png">
-  <link rel="manifest" href="site.webmanifest">
+  <title>404 | Rund um den Baum · Fa. Pfaff</title>
 
-  <link rel="stylesheet" href="styles/varriables.css">
-  <link rel="stylesheet" href="styles/global.css">
+  <link rel="icon" href="assets/favicon/pfaff-icon.ico?v=20260626" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/pfaff-icon-32.png?v=20260626">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/pfaff-icon-16.png?v=20260626">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/pfaff-apple-touch.png?v=20260626">
+
+  <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/404.css">
-
-  <script src="scripts/404.js" defer></script>
 </head>
 
-<body class="page-404">
-  <main>
-    <section class="not-found">
-      <div class="not-found__forest" aria-hidden="true"></div>
+<body>
+  <main class="not-found-page">
+    <a class="not-found-brand" href="start.html" aria-label="Zur Startseite">
+      <img class="not-found-tree" src="assets/media/logo-tree.png" alt="">
+      <img class="not-found-wordmark" src="assets/media/logo-wordmark.png" alt="Rund um den Baum · Fa. Pfaff">
+    </a>
 
-      <a class="not-found-back" href="start.html" aria-label="Zur Startseite">
-        ← Zur Startseite
+    <section class="not-found-content">
+      <p class="eyebrow">Seite nicht gefunden</p>
+
+      <h1>404</h1>
+
+      <h2>Hier ist wohl ein Ast abgebrochen.</h2>
+
+      <p>
+        Die Seite, die Sie suchen, existiert leider nicht oder wurde verschoben.
+      </p>
+
+      <a class="not-found-button" href="start.html">
+        Zurück zur Startseite <span>↗</span>
       </a>
-
-      <div class="not-found__leaves" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div class="not-found__branch" aria-hidden="true">
-        <span class="not-found__line"></span>
-        <span class="not-found__broken-branch"></span>
-      </div>
-
-      <div class="not-found__content">
-        <p class="eyebrow">Seite nicht gefunden</p>
-
-        <strong class="not-found__number">404</strong>
-
-        <h1>Ein Ast ist wohl auf die Leitung gefallen.</h1>
-
-        <p>
-          Diese Seite ist gerade nicht erreichbar.
-          Wir räumen den Weg frei.
-        </p>
-
-        <div class="not-found__actions">
-          <a class="btn btn-primary" href="start.html">Zurück zur Startseite</a>
-          <a class="btn btn-ghost" href="contact.html">Kontakt aufnehmen</a>
-        </div>
-      </div>
     </section>
   </main>
 </body>
