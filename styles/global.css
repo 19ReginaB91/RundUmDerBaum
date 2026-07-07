@@ -528,6 +528,7 @@ dialog::backdrop {
 .reveal:nth-child(4) {
   transition-delay: .24s;
 }
+
 .footer-forest-edge {
   height: clamp(120px, 16vw, 230px);
   margin-top: clamp(-90px, -6vw, -50px);
@@ -704,6 +705,8 @@ dialog::backdrop {
   }
 
   .mobile-bottom-nav {
+    --mobile-nav-count: 4;
+
     position: fixed;
     z-index: 28;
     right: 10px;
@@ -712,7 +715,7 @@ dialog::backdrop {
     min-height: 76px;
     padding: 8px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--mobile-nav-count), minmax(0, 1fr));
     gap: 6px;
     border: 1px solid rgba(24, 32, 23, .14);
     border-radius: 26px;
@@ -724,6 +727,10 @@ dialog::backdrop {
       0 18px 55px rgba(0, 0, 0, .28),
       inset 0 1px 0 rgba(255, 255, 255, .85);
     backdrop-filter: blur(18px);
+  }
+
+  .mobile-bottom-nav.is-five {
+    --mobile-nav-count: 5;
   }
 
   .mobile-bottom-link {
@@ -754,18 +761,32 @@ dialog::backdrop {
     height: 24px;
     object-fit: contain;
     opacity: .72;
-    transition: opacity var(--transition-fast);
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
   }
 
   .mobile-bottom-link:hover,
   .mobile-bottom-link[aria-expanded="true"] {
-    color: var(--color-copper);
+    color: var(--color-amber);
     background: rgba(198, 106, 43, .1);
   }
 
   .mobile-bottom-link:hover img,
   .mobile-bottom-link[aria-expanded="true"] img {
     opacity: .95;
+  }
+
+  .mobile-bottom-link.is-active,
+  .mobile-bottom-link[aria-current="page"] {
+    color: var(--color-amber);
+    background: rgba(198, 106, 43, .12);
+  }
+
+  .mobile-bottom-link.is-active img,
+  .mobile-bottom-link[aria-current="page"] img {
+    opacity: 1;
+    transform: translateY(-2px);
   }
 
   .mobile-contact-actions {
