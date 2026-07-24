@@ -1,4 +1,11 @@
 const revealItems = document.querySelectorAll(".reveal");
+const heroVideo = document.querySelector(".hero-video");
+
+function initHeroVideoPlayback() {
+  if (!heroVideo) return;
+
+  heroVideo.playbackRate = 0.65;
+}
 
 function initScrollReveal() {
   if (!revealItems.length) return;
@@ -31,3 +38,4 @@ function initScrollReveal() {
 }
 
 initScrollReveal();
+initHeroVideoPlayback();

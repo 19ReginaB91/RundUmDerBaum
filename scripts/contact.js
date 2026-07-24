@@ -15,6 +15,12 @@ function buildMailBody(formData) {
   const service = getFormValue(formData, "service");
   const urgency = getFormValue(formData, "urgency");
   const message = getFormValue(formData, "message");
+  const photos = formData.getAll("photos").filter((file) => {
+    return file && typeof file === "object" && file.name;
+  });
+  const photoNote = photos.length
+    ? `${photos.length} Foto(s) ausgewählt: ${photos.map((file) => file.name).join(", ")}. Bitte im E-Mail-Programm als Anhang hinzufügen.`
+    : "Keine Fotos ausgewählt.";
 
   return [
     "Neue Anfrage über die Website:",
@@ -25,11 +31,12 @@ function buildMailBody(formData) {
     `Adresse / Ort des Baumes: ${address || "Nicht angegeben"}`,
     `Leistung: ${service}`,
     `Dringlichkeit: ${urgency}`,
+    `Fotos: ${photoNote}`,
     "",
     "Nachricht:",
     message,
     "",
-    "Hinweis: Falls Fotos vorhanden sind, können diese bitte als Antwort auf diese E-Mail gesendet werden."
+    "Hinweis: Aus Sicherheitsgründen können Website-Mailto-Formulare Fotos nicht automatisch anhängen."
   ].join("\n");
 }
 
@@ -61,6 +68,10 @@ function initContactForm() {
     }
 
     window.location.href = mailto;
+
+    window.setTimeout(() => {
+      window.location.href = "thanks.html";
+    }, 1200);
   });
 }
 

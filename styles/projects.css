@@ -14,7 +14,7 @@
   background:
     linear-gradient(90deg, rgba(8, 16, 10, .88), rgba(8, 16, 10, .48), rgba(8, 16, 10, .22)),
     linear-gradient(180deg, rgba(8, 16, 10, .16), rgba(8, 16, 10, .82)),
-    url("../assets/media/work-baumpflege-01.png") center / cover no-repeat,
+    url("../assets/media/work-baumpflege-generated.png") center / cover no-repeat,
     var(--color-forest);
   overflow: hidden;
 }
@@ -292,7 +292,7 @@
   color: var(--color-paper);
   background:
     linear-gradient(90deg, rgba(12, 22, 14, .94), rgba(12, 22, 14, .55)),
-    url("../assets/media/work-technik-01.png") center / cover no-repeat,
+    url("../assets/media/work-technik-generated.png") center / cover no-repeat,
     var(--color-forest);
   overflow: hidden;
 }

@@ -215,27 +215,27 @@
 }
 
 .service-card-image-1 {
-  --service-image: url("../assets/media/service-baumpflege.png");
+  --service-image: url("../assets/media/service-baumpflege-generated.png");
 }
 
 .service-card-image-2 {
-  --service-image: url("../assets/media/service-baumfaellung.png");
+  --service-image: url("../assets/media/service-baumfaellung-generated.png");
 }
 
 .service-card-image-3 {
-  --service-image: url("../assets/media/service-baumkontrolle.png");
+  --service-image: url("../assets/media/service-baumkontrolle-generated.png");
 }
 
 .service-card-image-4 {
-  --service-image: url("../assets/media/service-kronensicherung.png");
+  --service-image: url("../assets/media/service-kronensicherung-generated.png");
 }
 
 .service-card-image-5 {
-  --service-image: url("../assets/media/service-wurzelfraesung.png");
+  --service-image: url("../assets/media/service-wurzelfraesung-generated.png");
 }
 
 .service-card-image-6 {
-  --service-image: url("../assets/media/service-garten-gehoelz.png");
+  --service-image: url("../assets/media/service-garten-gehoelz-generated.png");
 }
 
 .service-card-body {

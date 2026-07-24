@@ -14,7 +14,7 @@
     linear-gradient(90deg, rgba(8, 16, 10, .92), rgba(8, 16, 10, .62)),
     radial-gradient(circle at 74% 24%, rgba(198, 106, 43, .24), transparent 32%),
     radial-gradient(circle at 18% 82%, rgba(173, 193, 139, .12), transparent 30%),
-    url("../assets/media/hero-tree-poster.png") center / cover no-repeat,
+    url("../assets/media/hero-arborist.png") center / cover no-repeat,
     var(--color-forest);
   overflow: hidden;
 }

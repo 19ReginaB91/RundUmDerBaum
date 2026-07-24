@@ -14,7 +14,7 @@
   background:
     linear-gradient(90deg, rgba(8, 16, 10, .88), rgba(8, 16, 10, .5), rgba(8, 16, 10, .24)),
     linear-gradient(180deg, rgba(8, 16, 10, .18), rgba(8, 16, 10, .82)),
-    url("../assets/media/about-hero.png") center / cover no-repeat,
+    url("../assets/media/hero-arborist.png") center / cover no-repeat,
     var(--color-forest);
   overflow: hidden;
 }
@@ -82,7 +82,7 @@
   min-height: 620px;
   background:
     linear-gradient(180deg, rgba(20, 37, 22, .05), rgba(20, 37, 22, .24)),
-    url("../assets/media/about-work.png") center / cover no-repeat,
+    url("../assets/media/manifesto-arborist.png") center / cover no-repeat,
     linear-gradient(135deg, #e5ddcf, #f7f4ec);
   border-radius: 0 90px 0 0;
   box-shadow: 0 34px 90px rgba(24, 32, 23, .18);
@@ -287,7 +287,7 @@
   color: var(--color-paper);
   background:
     linear-gradient(90deg, rgba(8, 16, 10, .9), rgba(8, 16, 10, .38)),
-    url("../assets/media/about-work.png") center / cover no-repeat,
+    url("../assets/media/manifesto-arborist.png") center / cover no-repeat,
     var(--color-forest);
   overflow: hidden;
 }

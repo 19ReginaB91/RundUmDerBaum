@@ -18,7 +18,6 @@
   object-fit: cover;
   object-position: center;
   z-index: 0;
-  transform: scale(1.02);
 }
 
 .hero::before {
@@ -183,6 +182,7 @@ blockquote em {
   grid-template-columns: minmax(0, 1fr) 270px;
   gap: 8vw;
   align-items: center;
+  overflow: hidden;
 }
 
 .intro-copy {
@@ -204,31 +204,24 @@ blockquote em {
   font: 400 clamp(18px, 2vw, 27px) / 1.55 var(--font-serif);
 }
 
-.tree-rings {
-  position: relative;
-  width: 270px;
-  height: 270px;
+.intro-proof {
+  padding: 26px 0 26px 28px;
   display: grid;
-  place-items: center;
-  color: var(--color-moss);
-  font: italic 24px var(--font-serif);
+  gap: 22px;
+  border-left: 1px solid rgba(24, 32, 23, .16);
 }
 
-.tree-rings span {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(96, 115, 75, .35);
-  border-radius: 48% 52% 51% 49% / 55% 44% 56% 45%;
+.intro-proof span {
+  display: grid;
+  gap: 5px;
+  color: #6a7067;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
-.tree-rings span:nth-child(2) {
-  inset: 25px;
-  transform: rotate(23deg);
-}
-
-.tree-rings span:nth-child(3) {
-  inset: 58px;
-  transform: rotate(-15deg);
+.intro-proof b {
+  color: var(--color-copper);
+  font: 400 31px / 1 var(--font-serif);
 }
 
 .section-dark {
@@ -336,6 +329,8 @@ blockquote em {
   margin: 90px calc(var(--container-x) * -1) calc(var(--section-y) * -1);
   padding: 24px 0;
   overflow: hidden;
+  contain: layout paint;
+  max-width: 100vw;
   background: var(--color-amber);
   color: #fff;
   white-space: nowrap;
@@ -544,6 +539,26 @@ blockquote em {
   grid-column: 1 / -1;
 }
 
+.contact-form .photo-upload {
+  display: none;
+  padding: 18px 20px;
+  border: 1px dashed rgba(173, 193, 139, .52);
+  background: rgba(255, 255, 255, .055);
+}
+
+.contact-form .photo-upload input {
+  min-height: auto;
+  padding: 12px;
+  border: 1px solid var(--color-white-20);
+  background: rgba(255, 255, 255, .08);
+}
+
+.contact-form .photo-upload small {
+  color: var(--color-white-58);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
 .consent {
   display: flex !important;
   grid-template-columns: 18px 1fr !important;
@@ -612,8 +627,7 @@ blockquote em {
     padding-left: 7vw;
   }
 
-  .hero-trust,
-  .tree-rings {
+  .hero-trust {
     display: none;
   }
 
@@ -646,6 +660,10 @@ blockquote em {
   .process-line {
     grid-template-columns: 1fr 1fr;
     gap: 50px 20px;
+  }
+
+  .contact-form .photo-upload {
+    display: grid;
   }
 }
 
@@ -690,9 +708,21 @@ blockquote em {
     min-height: auto;
   }
 
+  .intro-proof {
+    margin-top: 34px;
+    padding: 24px 0 0;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--color-line);
+    border-left: 0;
+  }
+
   .large-copy {
     margin-top: 35px;
     padding-left: 22px;
+  }
+
+  .intro-proof {
+    grid-template-columns: 1fr;
   }
 
   .display {
@@ -742,6 +772,10 @@ blockquote em {
   .contact-form {
     padding: 28px 20px;
     grid-template-columns: 1fr;
+  }
+
+  .contact-form .photo-upload {
+    display: grid;
   }
 
   .contact-form label {

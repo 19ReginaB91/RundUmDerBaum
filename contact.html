@@ -110,16 +110,10 @@
         </h2>
 
         <p>
-          Hilfreich sind Fotos vom Baum, die Adresse des Standorts und eine kurze
-          Beschreibung, worum es geht. Danach melden wir uns persönlich zurück.
+          Hilfreich sind die Adresse des Standorts und eine kurze Beschreibung,
+          worum es geht. Danach melden wir uns persönlich zurück.
         </p>
 
-        <div class="contact-signature" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <b>Pfaff</b>
-        </div>
       </div>
 
       <form class="contact-form-page" id="contact-form">
@@ -187,6 +181,12 @@
           </p>
         </div>
 
+        <label class="photo-upload full">
+          <span>Fotos hochladen</span>
+          <input type="file" name="photos" accept="image/*" multiple>
+          <small>Auf Tablet und Smartphone können Sie hier Fotos vom Baum auswählen.</small>
+        </label>
+
         <label class="consent full">
           <input type="checkbox" required>
 
@@ -203,6 +203,64 @@
 
         <p class="form-status full" role="status"></p>
       </form>
+    </section>
+
+    <section class="reviews-band contact-reviews" data-header-theme="light">
+      <div>
+        <p class="eyebrow">Bewertungen</p>
+
+        <h2>
+          Gute Arbeit spricht<br>
+          sich herum.
+        </h2>
+      </div>
+
+      <div class="reviews-score">
+        <strong>5,0</strong>
+        <span>Google-Bewertung</span>
+        <small>aus 18 Bewertungen</small>
+      </div>
+
+      <p class="reviews-copy">
+        Echte Rezensionen lesen Sie direkt im Google-Unternehmensprofil.
+        Dort finden Sie weitere Erfahrungen von Kunden aus der Region.
+      </p>
+
+      <div class="reviews-list">
+        <article class="review-card">
+          <div><strong>Tanja Pollmann</strong><span>Google · 5/5</span></div>
+          <p>Sehr professionelle Beratung und äußerst ordentliche Ausführung der Baumschnittarbeiten. Wir können diesen Betrieb auf jeden Fall weiter empfehlen.</p>
+        </article>
+
+        <article class="review-card">
+          <div><strong>Ralf Mumm</strong><span>Google · 5/5</span></div>
+          <p>Baumfällung auf hohem Niveau. Schnell, gut und sehr sicher, fachlich gute Mitarbeiter und Geschäftsführung.</p>
+        </article>
+
+        <article class="review-card">
+          <div><strong>Heinz Götte</strong><span>Google · 5/5</span></div>
+          <p>Sehr sauberes Arbeiten. Alle Wünsche erfüllt, freundlich. Kann man nur weiterempfehlen.</p>
+        </article>
+
+        <article class="review-card">
+          <div><strong>Michael Gruttmann</strong><span>Google · 5/5</span></div>
+          <p>Die Fa. Pfaff hat bei uns einen Gartenzaun gesetzt. Es wurde eine kompetente und absolute tolle Arbeit geleistet.</p>
+        </article>
+
+        <article class="review-card">
+          <div><strong>Lars Busse</strong><span>Google · 5/5</span></div>
+          <p>Tolle Arbeit, und super nettes Team! Können wir gerne weiter empfehlen!</p>
+        </article>
+      </div>
+
+      <a
+        class="reviews-link"
+        href="https://www.google.com/search?q=Joshua+Pfaff+-+Rund+um+den+Baum+-+Baumpflege+-+Ehemals+Ulrich+Pfaff+Reviews"
+        target="_blank"
+        rel="noopener"
+      >
+        Weitere Bewertungen ansehen <span>↗</span>
+      </a>
     </section>
 
     <section class="contact-location" data-header-theme="light">
@@ -249,7 +307,12 @@
     </section>
   </main>
 
-  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+  <nav class="mobile-bottom-nav is-five" aria-label="Mobile Navigation">
+    <a class="mobile-bottom-link" href="start.html">
+      <span class="nav-home-icon" aria-hidden="true"></span>
+      <span>Start</span>
+    </a>
+
     <a class="mobile-bottom-link" href="services.html">
       <img src="assets/icons/trimming.png" alt="" aria-hidden="true">
       <span>Leistungen</span>
@@ -257,7 +320,7 @@
 
     <a class="mobile-bottom-link" href="about.html">
       <img src="assets/icons/about.png" alt="" aria-hidden="true">
-      <span>Über uns</span>
+      <span>&Uuml;ber uns</span>
     </a>
 
     <a class="mobile-bottom-link" href="projects.html">
@@ -266,7 +329,7 @@
     </a>
 
     <button
-      class="mobile-bottom-link mobile-contact-trigger"
+      class="mobile-bottom-link mobile-contact-trigger is-active"
       type="button"
       aria-expanded="false"
       aria-controls="mobile-contact-actions"
@@ -309,8 +372,6 @@
       </a>
     </div>
   </nav>
-
-  <div class="footer-forest-edge" aria-hidden="true"></div>
 
   <footer data-header-theme="dark">
     <div class="footer-brand">
@@ -367,7 +428,7 @@
       <strong>Diese Website bleibt bodenständig.</strong>
 
       <p>
-        Der Entwurf verwendet nur technisch notwendige Speicherung.
+        Diese Website verwendet nur technisch notwendige Speicherung.
         Keine Analyse, kein Tracking, kein Marketing.
       </p>
     </div>

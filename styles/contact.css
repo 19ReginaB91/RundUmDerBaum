@@ -77,8 +77,8 @@
 .contact-main {
   padding: 120px var(--container-x);
   display: grid;
-  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.25fr);
-  gap: 7vw;
+  grid-template-columns: minmax(320px, .9fr) minmax(0, 1.25fr);
+  gap: 6vw;
   align-items: start;
 }
 
@@ -96,38 +96,6 @@
   margin: 28px 0 0;
   color: #5f655c;
   font-size: 17px;
-}
-
-.contact-signature {
-  width: 190px;
-  height: 190px;
-  margin-top: 46px;
-  position: relative;
-  display: grid;
-  place-items: center;
-  color: rgba(24, 32, 23, .48);
-}
-
-.contact-signature span {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(24, 32, 23, .18);
-  border-radius: 48% 52% 46% 54%;
-}
-
-.contact-signature span:nth-child(2) {
-  inset: 24px;
-  transform: rotate(9deg);
-}
-
-.contact-signature span:nth-child(3) {
-  inset: 48px;
-  transform: rotate(-12deg);
-}
-
-.contact-signature b {
-  font: 400 27px var(--font-serif);
-  color: var(--color-copper);
 }
 
 .contact-form-page {
@@ -189,6 +157,7 @@
 }
 
 .photo-hint {
+  display: none;
   padding: 22px 24px;
   background:
     radial-gradient(ellipse at 100% 0%, rgba(173, 193, 139, .24), transparent 46%),
@@ -206,6 +175,25 @@
   margin: 0;
   color: #5f655c;
   font-size: 14px;
+}
+
+.photo-upload {
+  display: none !important;
+  padding: 20px 22px;
+  border: 1px dashed rgba(198, 106, 43, .52);
+  background: rgba(198, 106, 43, .07);
+}
+
+.photo-upload input {
+  min-height: auto;
+  padding: 13px;
+  background: rgba(255, 255, 255, .68);
+}
+
+.photo-upload small {
+  color: #5f655c;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .contact-form-page .consent {
@@ -340,8 +328,12 @@
     position: static;
   }
 
-  .contact-signature {
-    margin-top: 34px;
+  .photo-hint {
+    display: block;
+  }
+
+  .photo-upload {
+    display: grid !important;
   }
 }
 
@@ -358,19 +350,6 @@
 
   .contact-main {
     padding: 80px 22px;
-  }
-
-  .contact-signature {
-    width: 150px;
-    height: 150px;
-  }
-
-  .contact-signature span:nth-child(2) {
-    inset: 19px;
-  }
-
-  .contact-signature span:nth-child(3) {
-    inset: 38px;
   }
 
   .contact-form-page {

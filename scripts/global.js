@@ -33,7 +33,7 @@ const legalTexts = {
       E-Mail: uli.p.pfaff@t-online.de
     </p>
 
-    <h3>Hinweis zum Entwurf</h3>
+    <h3>Hinweis zur finalen Prüfung</h3>
     <p>
       Vor Veröffentlichung müssen Rechtsform, zuständige Aufsichtsbehörde,
       Kammer-/Registerdaten und gegebenenfalls Steuerdaten durch den Betreiber
@@ -51,9 +51,7 @@ const legalTexts = {
     <h2>Datenschutzerklärung</h2>
 
     <p>
-      Diese Fassung ist ein sorgfältiger Entwurf und muss vor Veröffentlichung
-      an Hosting, Formularversand und tatsächlich eingesetzte Dienste angepasst
-      werden.
+      Diese Fassung beschreibt den aktuellen Stand der Website und sollte vor Veröffentlichung an Hosting, Formularversand und tatsächlich eingesetzte Dienste angepasst werden.
     </p>
 
     <h3>1. Verantwortlicher</h3>
@@ -89,7 +87,7 @@ const legalTexts = {
 
     <h3>5. Externe Dienste</h3>
     <p>
-      Dieser Entwurf bindet keine Analyse-, Karten-, Video- oder Marketingdienste
+      Diese Website bindet keine Analyse-, Karten-, Video- oder Marketingdienste
       ein. Werden solche Dienste ergänzt, ist diese Erklärung zu aktualisieren
       und gegebenenfalls eine Einwilligungslösung einzurichten.
     </p>
@@ -99,7 +97,7 @@ const legalTexts = {
     <h2>Cookie-Hinweise</h2>
 
     <p>
-      Der aktuelle Entwurf setzt keine Analyse- oder Marketing-Cookies.
+      Die aktuelle Website setzt keine Analyse- oder Marketing-Cookies.
       Ihre Bestätigung dieses Hinweises wird ausschließlich lokal in Ihrem
       Browser gespeichert.
     </p>
