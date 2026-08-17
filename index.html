@@ -22,7 +22,7 @@
   <div class="page-noise" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="brand" href="start.html" aria-label="Rund um den Baum - Startseite">
+    <a class="brand" href="index.html" aria-label="Rund um den Baum - Startseite">
       <span class="brand-tree">
         <img src="assets/media/logo-tree.png" alt="">
       </span>
@@ -39,7 +39,7 @@
     </button>
 
     <nav id="main-nav" aria-label="Hauptnavigation">
-      <a href="start.html">Start</a>
+      <a href="index.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
       <a href="projects.html">Arbeiten</a>
@@ -107,7 +107,7 @@
         <span><b>Seit 1998</b> zertifizierter Fachbetrieb</span>
       </div>
 
-      <a class="scroll-cue" href="start.html#intro">
+      <a class="scroll-cue" href="index.html#intro">
         <span>Entdecken</span>
         <i></i>
       </a>
@@ -416,7 +416,24 @@
         </div>
       </div>
 
-      <form class="contact-form reveal" id="contact-form">
+      <form
+        class="contact-form reveal"
+        id="contact-form"
+        name="kontakt"
+        method="post"
+        action="thanks.html"
+        data-netlify="true"
+        netlify-honeypot="company"
+        enctype="multipart/form-data"
+      >
+        <input type="hidden" name="form-name" value="kontakt">
+        <p class="form-trap" aria-hidden="true">
+          <label>
+            Firma
+            <input name="company" tabindex="-1" autocomplete="off">
+          </label>
+        </p>
+
         <label>
           <span>Name</span>
           <input name="name" autocomplete="name" required placeholder="Ihr Name">
@@ -470,7 +487,7 @@
         </label>
 
         <button class="button button-primary full" type="submit">
-          Anfrage vorbereiten <span>↗</span>
+          Anfrage senden <span>↗</span>
         </button>
 
         <p class="form-status full" role="status"></p>
@@ -479,7 +496,7 @@
   </main>
 
   <nav class="mobile-bottom-nav is-five" aria-label="Mobile Navigation">
-    <a class="mobile-bottom-link is-active" href="start.html" aria-current="page">
+    <a class="mobile-bottom-link is-active" href="index.html" aria-current="page">
       <span class="nav-home-icon" aria-hidden="true"></span>
       <span>Start</span>
     </a>
@@ -573,7 +590,7 @@
     <div>
       <h3>Navigation</h3>
 
-      <a href="start.html">Start</a>
+      <a href="index.html">Start</a>
       <a href="services.html">Leistungen</a>
       <a href="about.html">Über uns</a>
       <a href="projects.html">Arbeiten</a>

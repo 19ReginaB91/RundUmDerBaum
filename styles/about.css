@@ -79,13 +79,55 @@
 }
 
 .about-intro-image {
+  position: relative;
   min-height: 620px;
+  margin: 0;
   background:
     linear-gradient(180deg, rgba(20, 37, 22, .05), rgba(20, 37, 22, .24)),
     url("../assets/media/manifesto-arborist.png") center / cover no-repeat,
     linear-gradient(135deg, #e5ddcf, #f7f4ec);
   border-radius: 0 90px 0 0;
   box-shadow: 0 34px 90px rgba(24, 32, 23, .18);
+}
+
+.about-logo-placeholder {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(247, 244, 236, .9), rgba(232, 221, 207, .86)),
+    radial-gradient(circle at 24% 18%, rgba(198, 106, 43, .16), transparent 34%),
+    radial-gradient(circle at 78% 76%, rgba(89, 122, 75, .2), transparent 38%),
+    var(--color-paper);
+}
+
+.about-logo-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 32px;
+  border: 1px solid rgba(20, 37, 22, .12);
+  border-radius: 0 64px 0 0;
+  pointer-events: none;
+}
+
+.about-logo-placeholder img {
+  width: min(360px, 70%);
+  opacity: .82;
+  filter: sepia(.12) saturate(.78) contrast(.92);
+}
+
+.about-logo-placeholder figcaption {
+  position: absolute;
+  right: 34px;
+  bottom: 28px;
+  left: 34px;
+  color: rgba(24, 32, 23, .54);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.5;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .about-intro-copy {
@@ -415,6 +457,22 @@
   .about-intro-image {
     min-height: 440px;
     border-radius: 0 52px 0 0;
+  }
+
+  .about-logo-placeholder::before {
+    inset: 22px;
+    border-radius: 0 38px 0 0;
+  }
+
+  .about-logo-placeholder img {
+    width: min(300px, 74%);
+  }
+
+  .about-logo-placeholder figcaption {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+    font-size: 10px;
   }
 
   .about-value-grid {
