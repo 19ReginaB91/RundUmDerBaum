@@ -19,16 +19,4 @@ function initPhotoUploadLabels() {
   });
 }
 
-function initTemporaryFormRedirect() {
-  const forms = document.querySelectorAll("#contact-form");
-
-  forms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      window.location.href = "thanks.html";
-    });
-  });
-}
-
 initPhotoUploadLabels();
-initTemporaryFormRedirect();
