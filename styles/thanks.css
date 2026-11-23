@@ -72,7 +72,7 @@
 .thanks-card h1 {
   margin: 18px 0 26px;
   font-family: var(--font-serif);
-  font-size: clamp(54px, 7vw, 108px);
+  font-size: clamp(54px, 7vw, 94px);
   line-height: .88;
   letter-spacing: -.06em;
 }

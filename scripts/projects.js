@@ -1,5 +1,5 @@
 const filterButtons = document.querySelectorAll("[data-filter]");
-const projectCards = document.querySelectorAll(".project-card");
+const projectGrid = document.querySelector("[data-project-grid]");
 
 const lightbox = document.querySelector("#project-lightbox");
 const lightboxImage = lightbox?.querySelector("img");
@@ -7,9 +7,18 @@ const lightboxKicker = lightbox?.querySelector("figcaption p");
 const lightboxTitle = lightbox?.querySelector("figcaption h3");
 const lightboxText = lightbox?.querySelector("figcaption span");
 const lightboxClose = lightbox?.querySelector(".project-lightbox-close");
-const lightboxButtons = document.querySelectorAll("[data-lightbox]");
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
 
 function initProjectFilters() {
+  const projectCards = projectGrid?.querySelectorAll(".project-card") || [];
+
   if (!filterButtons.length || !projectCards.length) return;
 
   filterButtons.forEach((button) => {
@@ -54,6 +63,8 @@ function closeProjectLightbox() {
 }
 
 function initProjectLightbox() {
+  const lightboxButtons = projectGrid?.querySelectorAll("[data-lightbox]") || [];
+
   if (!lightbox || !lightboxButtons.length) return;
 
   lightboxButtons.forEach((button) => {
@@ -77,5 +88,76 @@ function initProjectLightbox() {
   });
 }
 
-initProjectFilters();
-initProjectLightbox();
+function revealProjectCards() {
+  const cards = projectGrid?.querySelectorAll(".reveal") || [];
+
+  if (!cards.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach((card) => card.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, currentObserver) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+        currentObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.13 }
+  );
+
+  cards.forEach((card) => observer.observe(card));
+}
+
+function renderProjects(works) {
+  if (!projectGrid) return;
+
+  projectGrid.innerHTML = works.map((work) => {
+    const layoutClass = work.layout ? ` ${escapeHtml(work.layout)}` : "";
+
+    return `
+      <article class="project-card reveal${layoutClass}" data-category="${escapeHtml(work.category)}">
+        <button
+          type="button"
+          data-lightbox
+          data-image="${escapeHtml(work.image)}"
+          data-title="${escapeHtml(work.label)}"
+          data-text="${escapeHtml(work.text)}"
+        >
+          <img src="${escapeHtml(work.image)}" alt="${escapeHtml(work.alt)}">
+          <span>${escapeHtml(work.label)}</span>
+        </button>
+
+        <div>
+          <p>${escapeHtml(work.kicker)}</p>
+          <h3>${escapeHtml(work.title)}</h3>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+async function initProjects() {
+  if (!projectGrid) return;
+
+  try {
+    const response = await fetch("assets/data/arbeiten.json");
+
+    if (!response.ok) return;
+
+    const works = await response.json();
+
+    renderProjects(works);
+    revealProjectCards();
+    initProjectFilters();
+    initProjectLightbox();
+  } catch (error) {
+    projectGrid.innerHTML = "";
+  }
+}
+
+initProjects();

@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: assets/media/arbeiten
+public_folder: assets/media/arbeiten
+
+locale: de
+
+collections:
+  - name: arbeiten
+    label: Arbeiten
+    label_singular: Arbeit
+    folder: content/arbeiten
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: Kategorie
+        name: category
+        widget: select
+        options:
+          - { label: Baumpflege, value: pflege }
+          - { label: Fällung, value: faellung }
+          - { label: Kontrolle, value: kontrolle }
+          - { label: Wurzelfräsung, value: wurzel }
+          - { label: Garten, value: garten }
+      - label: Beschriftung auf dem Foto
+        name: label
+        widget: string
+      - label: Zeile über dem Titel
+        name: kicker
+        widget: string
+      - label: Foto
+        name: image
+        widget: image
+      - label: Beschreibung des Fotos
+        name: alt
+        widget: string
+      - label: Kurztext
+        name: text
+        widget: text

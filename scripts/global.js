@@ -22,6 +22,7 @@ const legalTexts = {
     <p>
       Rund um den Baum · Fa. Pfaff<br>
       Inhaber: Joshua Pfaff<br>
+      Einzelunternehmen<br>
       Möllekensfeld 10<br>
       46569 Hünxe
     </p>
@@ -33,11 +34,11 @@ const legalTexts = {
       E-Mail: uli.p.pfaff@t-online.de
     </p>
 
-    <h3>Hinweis zur finalen Prüfung</h3>
+    <h3>Steuer und Kammer</h3>
     <p>
-      Vor Veröffentlichung müssen Rechtsform, zuständige Aufsichtsbehörde,
-      Kammer-/Registerdaten und gegebenenfalls Steuerdaten durch den Betreiber
-      geprüft und ergänzt werden.
+      Steuernummer: 101 / 5116 / 4326, Finanzamt Dinslaken<br>
+      Umsatzsteuer-Identifikationsnummer: DE458960489<br>
+      Niederrheinische Industrie- und Handelskammer, Mitgliedsnummer 103270
     </p>
 
     <h3>Haftung für Inhalte und Links</h3>
@@ -51,45 +52,38 @@ const legalTexts = {
     <h2>Datenschutzerklärung</h2>
 
     <p>
-      Diese Fassung beschreibt den aktuellen Stand der Website und sollte vor Veröffentlichung an Hosting, Formularversand und tatsächlich eingesetzte Dienste angepasst werden.
+      Was anfällt, wenn Sie diese Seite öffnen oder uns einen Baum zeigen.
+      Ohne Tracking, ohne Newsletter, ohne Werbung.
     </p>
 
-    <h3>1. Verantwortlicher</h3>
+    <h3>Verantwortlich</h3>
     <p>
-      Rund um den Baum · Fa. Pfaff<br>
-      Joshua Pfaff<br>
-      Möllekensfeld 10<br>
-      46569 Hünxe<br>
+      Joshua Pfaff, Rund um den Baum · Fa. Pfaff, Möllekensfeld 10, 46569 Hünxe.
       E-Mail: uli.p.pfaff@t-online.de
     </p>
 
-    <h3>2. Server-Protokolldaten</h3>
+    <h3>Hosting</h3>
     <p>
-      Beim Aufruf dieser Website können technisch erforderliche Daten wie
-      IP-Adresse, Zeitpunkt, Browser und aufgerufene Seite verarbeitet werden.
-      Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
+      Die Website liegt bei Netlify, Inc. in den USA. Beim Aufruf werden technisch nötige Angaben verarbeitet, etwa IP-Adresse, Zeitpunkt, aufgerufene Seite und Browser. Die Verbindung ist per HTTPS verschlüsselt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.
     </p>
 
-    <h3>3. Kontaktaufnahme</h3>
+    <h3>Anfrage</h3>
     <p>
-      Angaben aus Telefon, E-Mail oder Kontaktformular werden nur zur Bearbeitung
-      Ihrer Anfrage verarbeitet. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b oder
-      lit. f DSGVO.
+      Name, Telefon, E-Mail, Ort des Baumes, Art der Arbeit, Dringlichkeit, Nachricht und freiwillige Fotos nutzen wir nur, um Ihre Anfrage zu beantworten. Netlify leitet das Formular an uli.p.pfaff@t-online.de weiter. Mit dem Häkchen willigen Sie ein, Art. 6 Abs. 1 lit. a DSGVO. Bei einem möglichen Auftrag kommt Art. 6 Abs. 1 lit. b DSGVO hinzu.
     </p>
 
-    <h3>4. Speicherdauer und Rechte</h3>
+    <h3>WhatsApp und Google</h3>
     <p>
-      Daten werden gelöscht, sobald der Zweck entfällt und keine gesetzlichen
-      Aufbewahrungspflichten bestehen. Sie haben insbesondere Rechte auf
-      Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde
-      bei einer Datenschutzaufsichtsbehörde.
+      Beides sind nur Links. Daten gehen dorthin erst, wenn Sie den Link öffnen. Eine Karte ist nicht eingebettet, und es gibt keine Besuchsstatistik.
     </p>
 
-    <h3>5. Externe Dienste</h3>
+    <h3>Speicherung und Rechte</h3>
     <p>
-      Diese Website bindet keine Analyse-, Karten-, Video- oder Marketingdienste
-      ein. Werden solche Dienste ergänzt, ist diese Erklärung zu aktualisieren
-      und gegebenenfalls eine Einwilligungslösung einzurichten.
+      Anfragen löschen wir, sobald sie erledigt sind. Wird daraus ein Auftrag, bleiben Rechnungen in der Regel zehn Jahre. Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Übertragung und Widerspruch. Beschwerde ist bei der LDI NRW möglich.
+    </p>
+
+    <p>
+      Die ausführliche Fassung steht auf der Seite <a href="datenschutz.html">Datenschutz</a>.
     </p>
   `,
 
@@ -109,12 +103,6 @@ const legalTexts = {
       übertragen.
     </p>
 
-    <h3>Spätere Erweiterungen</h3>
-    <p>
-      Sobald Statistik, eingebettete Karten, Videos oder andere Drittanbieter-
-      Dienste verwendet werden, muss vor deren Aktivierung eine informierte
-      Einwilligung eingeholt werden.
-    </p>
   `
 };
 

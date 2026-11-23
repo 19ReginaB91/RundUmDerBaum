@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles/variables.css">
   <link rel="stylesheet" href="styles/global.css">
   <link rel="stylesheet" href="styles/start.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -634,5 +635,16 @@
   <script src="scripts/global.js" defer></script>
   <script src="scripts/contact.js" defer></script>
   <script src="scripts/start.js" defer></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

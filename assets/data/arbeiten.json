@@ -1,0 +1,82 @@
+[
+  {
+    "title": "Pflege in der Krone",
+    "category": "pflege",
+    "label": "Baumpflege",
+    "kicker": "01 / Pflege",
+    "image": "assets/media/work-baumpflege-generated.png",
+    "alt": "Baumpflege in einer grünen Baumkrone",
+    "text": "Schonende Pflege, Rückschnitt und Erhalt wertvoller Bäume.",
+    "layout": ""
+  },
+  {
+    "title": "Sicher abgetragen",
+    "category": "faellung",
+    "label": "Fällung",
+    "kicker": "02 / Fällung",
+    "image": "assets/media/work-faellung-generated.png",
+    "alt": "Professionelle Baumfällung mit Sicherheitsausrüstung",
+    "text": "Kontrollierte Fällung mit klarer Vorbereitung und sicherer Ausführung.",
+    "layout": "project-card-tall"
+  },
+  {
+    "title": "Genau hingesehen",
+    "category": "kontrolle",
+    "label": "Kontrolle",
+    "kicker": "03 / Kontrolle",
+    "image": "assets/media/work-kontrolle-generated.png",
+    "alt": "Baumkontrolle und fachliche Begutachtung",
+    "text": "Beurteilung von Zustand, Standort und möglichen Risiken.",
+    "layout": ""
+  },
+  {
+    "title": "Fläche vorbereitet",
+    "category": "wurzel",
+    "label": "Wurzel",
+    "kicker": "04 / Wurzel",
+    "image": "assets/media/work-wurzelfraesung-generated.png",
+    "alt": "Wurzelfräsung nach einer Baumfällung",
+    "text": "Saubere Entfernung von Wurzelstöcken nach der Fällung.",
+    "layout": ""
+  },
+  {
+    "title": "Rund ums Grundstück",
+    "category": "garten",
+    "label": "Garten",
+    "kicker": "05 / Garten",
+    "image": "assets/media/work-garten-generated.png",
+    "alt": "Garten- und Gehölzpflege",
+    "text": "Gehölzpflege, Pflanzung und Gestaltung rund um Grundstück und Garten.",
+    "layout": "project-card-wide"
+  },
+  {
+    "title": "Vorher. Nachher. Sauber.",
+    "category": "pflege",
+    "label": "Vorher / Nachher",
+    "kicker": "06 / Ergebnis",
+    "image": "assets/media/work-before-after-generated.png",
+    "alt": "Vorher-Nachher-Arbeit am Baum",
+    "text": "Saubere Veränderung, ohne den Charakter des Grundstücks zu verlieren.",
+    "layout": ""
+  },
+  {
+    "title": "Arbeit in der Höhe",
+    "category": "pflege",
+    "label": "SKT",
+    "kicker": "07 / SKT",
+    "image": "assets/media/work-skt-generated.png",
+    "alt": "Arbeit mit Seilklettertechnik im Baum",
+    "text": "Arbeiten dort, wo Maschinen nicht hinkommen oder der Garten geschont werden muss.",
+    "layout": ""
+  },
+  {
+    "title": "Ruhig vorbereitet",
+    "category": "faellung",
+    "label": "Technik",
+    "kicker": "08 / Technik",
+    "image": "assets/media/work-technik-generated.png",
+    "alt": "Technik und Maschinen bei der Baumarbeit",
+    "text": "Maschinen, Werkzeuge und Erfahrung greifen sauber ineinander.",
+    "layout": ""
+  }
+]
