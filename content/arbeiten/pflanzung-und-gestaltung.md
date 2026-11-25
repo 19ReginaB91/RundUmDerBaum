@@ -2,7 +2,7 @@
 title: Pflanzung und Gestaltung
 category: garten
 label: Neupflanzung
-kicker: Ausgleichpflanzung nach Vorgabe
+kicker: Neupflanzung
 image: assets/media/arbeiten/whatsapp-image-2026-11-24-at-12.49.18-1-.jpeg
 alt: Nachpflanzung
 text: >-
