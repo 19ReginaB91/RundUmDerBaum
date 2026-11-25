@@ -1,6 +1,6 @@
 ---
-title: Vorher. Nachher. Sauber.
-category: pflege
+title: Sauberkeit
+category: garten
 label: Vorher / Nachher
 kicker: 06 / Ergebnis
 image: assets/media/arbeiten/whatsapp-image-2026-11-24-at-12.49.20-2-.jpeg
